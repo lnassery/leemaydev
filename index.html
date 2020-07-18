@@ -3,47 +3,73 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>leemay.dev</title>
-    <script src="https://code.iconify.design/1/1.0.5/iconify.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
 
     <style media="screen">
-      body {font-family: 'Roboto', Arial, sans-serif; background: white; color: black; font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { margin: 50px auto 16px; padding: 32px 100px; }
-      #message h2 { letter-spacing: .07em; color: black; font-weight: bold; font-size: 45px; margin: 0 0 8px; }
-      #message h1 { font-size: 25px; font-weight: 300; color: #4788f2; margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 20px; font-weight:700; color:#8e8e8e }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      .episodes { font-weight:300; padding-top:8px;font-size:28px; }
-      .subscribe-options {color:black; border:1px solid #f00064; border-top-width:1px; border-bottom-width:1px; border-right-width:0px; border-left-width:0px; width:70%; padding:10px}
-      .subscribe-podcast { margin-bottom:10px;  font-weight:700; padding-top:6px;}
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; box-shadow: none; }
-        body { border-top: 16px solid #f00064; }
-      }
-      .iconify { padding-left:50px }
-      .icon-text { padding-right: 2px; padding-left:5px;cursor:pointer; }
-      .twitter-icon { float:right; cursor:pointer;  border: white; font-size:27px  }
-      .twitter-text { float:right; cursor:pointer; border: white; padding-left:10px; font-size:27px }
-      .names { cursor:pointer; }
-      @font-face {
-        font-family: "Roboto";
-        src: url("css/RobotoCondensed-Light.ttf");
-      }
+	    html {
+	  		position: relative;
+	  		min-height: 100%;
+		}
+		body {
+	  		margin-bottom: 60px; /* Margin bottom by footer height */
+		}
+		.footer {
+		  	position: absolute;
+		  	bottom: 0;
+		  	width: 100%;
+		  	height: 60px; /* Set the fixed height of the footer here */
+		  	line-height: 60px; /* Vertically center the text there */
+		  	background-color: #7eabf5;
+		  	color:white;
+		}
+
+		.container {
+		  width: auto;
+		  max-width: 680px;
+		  padding: 0 15px;
+		}
+
+		.foot-text {
+			padding-right:15px;
+			font-size: 20px;
+			cursor: pointer;
+		}
     </style>
   </head>
-  <body>
-    <div id="message">
-      <h2>
-        <span style="color:#4788f2">leemay.dev</span> 
-   		<span class="iconify twitter-icon" data-icon="mdi-linkedin" data-inline="false" onclick="window.open('https://www.linkedin.com/in/leemaynassery/', '_blank')"> </span>
-   		<span class="iconify twitter-icon" data-icon="mdi-twitter" data-inline="false" onclick="window.open('https://twitter.com/leemaynassery', '_blank')"> </span>
 
-      </h2>
-      <br/><br/>
-     
+   <body>
+    <main role="main" class="container">
+      <h1 class="mt-5" style="color:#5993f3">leemay.dev</h1>
+      <br/>
+      <p class="lead">
+      	Hi. My name is Leemay Nassery. I'm an engineering manager at Spotify. Previously, I worked at Comcast on personalization, A/B testing and other various aspects of the video platform. 
 
-    </div>
+		<br/><br/>
+      	I enjoy writing, so here's my blog.
+
+      </p>
+      <p>
+      ....
+      </p>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <span>
+        	<span onclick="window.open('https://www.linkedin.com/in/leemaynassery/', '_blank')" class="foot-text">LinkedIn </span>
+			<span onclick="window.open('https://twitter.com/leemaynassery', '_blank')" class="foot-text"> Twitter</span>
+        </span>
+      </div>
+    </footer>
   </body>
+
+ 
 </html>
+
+
+    
+
+
+
 
