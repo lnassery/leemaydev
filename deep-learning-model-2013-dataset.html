@@ -57,7 +57,7 @@
   </p>
   <p>
 
-Back in 2018, we worked on a deep learning model for video recommendations (suggesting TV shows and movies based on your prior watch history) that was initially evaluated on an old static dataset from 2013‬. This deep learning model was originally developed by a peer research team and was developed on a Hadoop cluster that resided on physical infrastructure.  
+Back in 2018, we worked on a deep learning model for video recommendations (suggesting TV shows and movies based on your prior watch history) that was initially evaluated on an old static dataset from 2013‬. This deep learning model was originally developed by a peer research team on a Hadoop cluster that resided on physical infrastructure.  
 <br/><br/>
 
 ‪Our first goal was to reproduce the evaluation metrics (i.e. recall) by training and evaluating (offline) the model in our AWS account, with intentions of not only comparing how long it took the model to train in our cloud environment but also to ensure we got the same recall numbers as the research team did in their stack. Once that was accomplished, we decided the next goal should be to re-evaluate the model on a fresh dataset. 
@@ -66,23 +66,28 @@ Back in 2018, we worked on a deep learning model for video recommendations (sugg
 This fresh dataset was more representative of usage for our subscribers in the current timeframe. The model training logic accepted files that were a strange combination of comma, pipe and tab delimited records. We wrote a job that read in the current fresh dataset that consisted of Avro records and converted those Avro records to this strange format, instead of modifying the model training logic to read Avro‬. 
 
 <br/><br/>
-Then a few days later, we realized the format for the dataset for training had to be one large file...
+A few days later, we realized the format of the dataset for training had to be one large file...
 
 <br/><br/>
 With this realization, we then decided to rewrite the model training logic so that the input for training wasn’t that strange format‬. 
 <br/><br/>
-We then spent days on determining why the evaluation numbers were lower for the model trained on the old dataset vs the fresh / current dataset. 
+Days were spent determining why the evaluation numbers were lower for the model trained on the old dataset vs the fresh / current dataset. 
 <br/><br/>
-We eventually pivoted away from this deep learning model and opted for focusing on introducing a For You personalized homepage in our video product using an older collaborative filtering algorithm that was already available in our production environment. 
+We eventually pivoted away from this deep learning model and opted for focusing efforts on introducing a 'For You' personalized homepage using an older collaborative filtering algorithm that was already available in our production environment. 
 <br/><br/>
-During those months, maybe time would have been better spent working on the deficiencies in the data pipeline that resulted in opting for the old poorly formatted 2013 dataset initially (so that our research peers always had a fresh dataset to work with)...or maybe time would have been better spent going straight to production with this collaborative filtering algorithm and then A/B Testing that against deep learning models in the future. 
+
+During those months, maybe time would have been better spent working on the deficiencies in the data pipeline that resulted in opting for the old poorly formatted 2013 dataset initially (so that our research peers always had a fresh dataset to work with). Or maybe time would have been better spent going straight to production with the collaborative filtering algorithm and then iterating on that via A/B Testing. 
+
+
 <br/><br/>
 Back in 2018, it felt like months were wasted on trying to get this deep learning model trained on a fresh dataset that was more representative of production. 
 
 <br/><br/>
-Now, it still feels like months were wasted. Our engineering team was small, so focusing on the right work was important. 
-<br/><br/>
+Reflecting on this now, it still feels like months were wasted. Our engineering team was small, so focusing on the right work was important. 
 
+Sometimes starting simple, executing, then iterating and improving is the best appoarch. 
+
+<br/><br/>
 Note: I no longer work on video recommendations, so for all I know, this deep learning model could be serving millions of requests today. 
 
       </p>
