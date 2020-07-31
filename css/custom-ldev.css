@@ -1,0 +1,49 @@
+	@font-face {
+		font-family: "Ubuntu";
+		src: url("Ubuntu-Regular.ttf");
+	}
+
+	body {
+	  font-family: 'Ubuntu', Arial, sans-serif;
+	  background: white;
+	  color: black;
+	  margin-bottom: 60px; /* Margin bottom by footer height */
+	}
+
+    html {
+  		position: relative;
+  		min-height: 100%;
+	}
+	
+	.footer {
+	  	position: absolute;
+	  	bottom: 0;
+	  	width: 100%;
+	  	height: 60px; /* Set the fixed height of the footer here */
+	  	line-height: 60px; /* Vertically center the text there */
+	  	background-color: #7eabf5;
+	  	color:white;
+	}
+
+	.container {
+	  width: auto;
+	  max-width: 680px;
+	  padding: 0 15px;
+	}
+
+	.foot-text {
+		padding-right:15px;
+		font-size: 20px;
+		cursor: pointer;
+		color:white;
+	}
+
+	.hello {
+      height: 230px;
+      background:url(../hello-b.png) no-repeat center 3px;
+
+	}
+
+	.lead {
+		border-bottom: 2px #7eabf5 solid
+	}
