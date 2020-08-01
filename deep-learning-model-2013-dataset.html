@@ -42,13 +42,10 @@ So this is a story of a project we took on, a bit too early in our journey of re
 <br/><br/>
 <span class="headers-post"> Training the model with fresh data </span>
 <br/>
-Once we accomplished training the model on the older dataset, the next goal would be to re-evaluate the model on a fresh dataset. This fresh dataset was more representative of usage for our subscribers in the current timeframe. The model training logic accepted files that were a strange combination of comma, pipe and tab delimited records. We wrote a Spark job that's input was the fresh dataset that consisted of Avro records and converted those Avro records to this strange format; instead of modifying the model training logic to read Avro‬. 
+Once we accomplished training the model on the older dataset, the next goal would be to re-evaluate the model on a fresh dataset. This fresh dataset was more representative of usage for our subscribers in the current timeframe. The model training logic accepted files that were a strange combination of comma, pipe and tab delimited records. We wrote a Spark job thats input was the fresh dataset that consisted of Avro records and converted those Avro records to this strange format; instead of modifying the model training logic to read Avro‬. 
 
 <br/><br/>
-A few days later, we realized the format of the dataset for training had to be one large file...
-
-<br/><br/>
-With this realization, we then decided to rewrite the model training logic so that the input for training wasn’t that strange pipe, comma, tab, insert-your-favorite-delimiter format‬. 
+A few days later, we realized the format of the dataset for training had to be one large file...With this realization, we then decided to rewrite the model training logic so that the input for training wasn’t that strange pipe, comma, tab, insert-your-favorite-delimiter format‬. 
 <br/><br/>
 Days were spent determining why the evaluation numbers were lower for the model trained on the old dataset vs the fresh / current dataset. 
 <br/><br/>
@@ -61,7 +58,7 @@ We soon pivoted away from this deep learning model and opted for focusing effort
 During those months, maybe time would have been better spent working on the deficiencies in the data pipeline that resulted in opting for the old poorly formatted 2013 dataset initially (so that our research peers would have easy access to a relevant / current timeframe dataset). Or maybe time would have been better spent running an A/B test with the collaborative filtering algorithm and then introducing a more complex model like deep learning; using the collaborative filtering algorithm as the baseline. 
 
 <br/><br/>
-Back in 2017, it felt like months were wasted on trying to get this deep learning model trained on a fresh dataset that was more representative of production. <span style="font-weight: 900"> Our engineering team was small, so focusing on the right work was important. </span> 
+Back in 2017, it felt like months were wasted on trying to get this deep learning model trained on a fresh dataset that was more representative of production. <span style="font-weight: 900"> The engineers on this team were great but as I've mentioned, we were a small team, so focusing on the right work was important. </span> 
 
 <br/><br/>
  
@@ -70,7 +67,7 @@ Back in 2017, it felt like months were wasted on trying to get this deep learnin
 
 There's a little more to this story then simply attempting to retrain a model with fresh data with intentions of taking it from the proof-of-concept phase to production. <span style="font-weight: 900"> There's a bigger organizational story here. </span>
 <br/><br/>
-At the time, our researchers were detached from engineering. So one of the reasons for saying 'yes' to collaborating on this project, instead of focusing on just pushing what we had with our simple recommendations algorithm further, was to build that relationship up. I wanted our team to be the team that everyone wanted to work with. I also wanted to increase the traffic to our services, which would of course mean the impact of personalization was increasing from a user or product perspective. If we had more engineers, focusing on building up our data platfrom so research could have petabytes of data to experiment with, would have been great. But we didn't have that luxury; therefore, our focus shifted towards gaining momentum with personalization as a platform via the easy-to-support collaborative filtering algorithm. If research was embedded with the engineering team, who knows what the outcome would have been. 
+At the time, our researchers were detached from engineering. So one of the reasons for saying 'yes' to collaborating on this project, instead of focusing on just pushing what we had with our simple recommendations algorithm further, was to build that relationship up. I wanted our team to be the team that everyone wanted to work with. I also wanted to increase the traffic to our services, which would of course mean the impact of personalization was increasing from a user or product perspective. If we had more engineers, focusing on building up our data platfrom so research could have petabytes of data to experiment with, would have been great. But we didn't have that luxury; therefore, our focus shifted towards gaining momentum with personalization as a platform via the easy-to-support collaborative filtering algorithm. If research was embedded with the engineering team, who knows what the outcome could have been. 
 
 <br/><br/>
 The closer the researchers are to engineers, the sooner they'll be thinking of how to get to their model to production. The closer the engineers are to research, the sooner they'll be thinking about how to get their model to production. 
@@ -83,7 +80,7 @@ The words "their model" starts to become ambiguous, because both are trying to <
 Reflecting on this now, it still feels like months were wasted. Because personalization's impact on the product was so far behind, what we worked on and the ROI of that work, was important. Sometimes starting simple, executing, then iterating and improving is the best approach. In this case, starting simple meant pushing forward with the collabortive filtering algorithm, with more focus given towards improving our engineering platform so we could quickly iterate on product features for this For You A/B Test that I elluded to earlier. 
 
 <br/><br/>
-Note: I no longer work on video recommendations, so for all I know, this deep learning model could be serving millions of requests today. 
+<span style="font-style:italic"> Note: I no longer work on video recommendations, so for all I know, this deep learning model could be serving millions of requests today. </span>
 
       </p>
  
