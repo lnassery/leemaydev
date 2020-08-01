@@ -1,7 +1,15 @@
+	
 	@font-face {
 		font-family: "Ubuntu";
 		src: url("Ubuntu-Regular.ttf");
 	}
+
+	.headers-post {
+		font-weight: 1000;
+		font-size:18px;
+		color:#5993f3;
+	}
+
 
 	body {
 	  font-family: 'Ubuntu', Arial, sans-serif;
