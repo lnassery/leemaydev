@@ -10,6 +10,11 @@
 		color:#5993f3;
 	}
 
+	.links-header {
+		padding-right: 20px;
+		float: right;
+		color:#5993f3;
+	}
 
 	body {
 	  font-family: 'Ubuntu', Arial, sans-serif;
