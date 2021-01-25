@@ -4,59 +4,117 @@
 		src: url("Ubuntu-Regular.ttf");
 	}
 
-	.headers-post {
-		font-weight: 1000;
-		font-size:18px;
-		color:#5993f3;
-	}
-
-	.links-header {
-		padding-right: 20px;
-		float: right;
-		color:#5993f3;
-	}
+	
 
 	body {
 	  font-family: 'Ubuntu', Arial, sans-serif;
 	  background: white;
 	  color: black;
-	  margin-bottom: 60px; /* Margin bottom by footer height */
+	  margin-bottom: 60px;
+	  background-color: #fff;
+      border: 15px solid black;
+      margin: 0;
+      padding-bottom: 20px
 	}
 
-    html {
-  		position: relative;
-  		min-height: 100%;
-	}
-	
-	.footer {
-	  	position: absolute;
-	  	bottom: 0;
-	  	width: 100%;
-	  	height: 60px; /* Set the fixed height of the footer here */
-	  	line-height: 60px; /* Vertically center the text there */
-	  	background-color: #7eabf5;
-	  	color:white;
-	}
+#all {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 25% auto}
+#sidebar {
+    margin-left: 15px;
+    margin-right: 15px}
+#sidebar img {
+    border-radius: 4px;
+    width: 100%}
+#sidebar .imgcontainer {
+    border: 2px solid #dadada;
+    margin-top: 15px}
+#sidebar h1 {
+    font-size: 2.2em;
+    font-family: sans-serif;
+    text-transform: none}
+#sidebar h1 a,.small-navbar.visible-xs h1 a {
+    color: black}
+.sidebar-menu {
+    margin-left: 10px;
+    padding-left: 0;
+	padding-top:10px;}
+.sidebar-menu li {
+    list-style: none;
+    margin-bottom: 10px}
 
-	.container {
-	  width: auto;
-	  max-width: 680px;
-	  padding: 0 15px;
-	}
+.sidebar-menu.exlinks {
+    margin-top: 35px}
+.sidebar-menu.exlinks li:before {
+    color: black;
+    content: '\02a33 '}
+.sidebar-menu li a {
+    color: #333;
+    border-bottom: 1px dotted #999;
+    padding-bottom: 2px;
+    text-decoration: none}
+.sidebar-menu li a:hover,.sidebar-menu li a:focus {
+    color: black;
+    border-bottom: 1px solid #ff2826}
+.sidebar p {
+    color: #555!important;
+    font-size: 1.4em}
+p,.sidebar-p {
+    color: #555!important}
+#sidebar .imgcredit {
+    margin-top: 50px}
 
-	.foot-text {
-		padding-right:15px;
-		font-size: 20px;
-		cursor: pointer;
-		color:white;
-	}
+@media screen and (max-width: 767px) {
+    body {
+    border: none}
+#all {
+    display: block;
+    width: 100%}
+#sidebar {
+    display: block}
+.itemgrid {
+    margin-left: 15px}
+#sidebar.sidebar-offcanvas p {
+    font-size: .8em!important}
+#sidebar.sidebar-offcanvas {
+    left: 0;
+    width: 100%;
+    position: relative;
+    font-size: 2em!important}
+.item p,.item h3 {
+    font-size: 1.4em!important;
+    line-height: 1.5em}
+#sidebar h1 {
+    font-size: 1.7em}
+#sidebar img {
+    margin-top: -35%}
+#sidebar .imgcontainer {
+    height: 50px;
+    overflow: hidden;
+    margin-top: 15px}
+.sidebar-p {
+    display: none}
+.singlecontainer {
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 100%;
+    display: block}
+.singlecontainer img {
+    width: 100%}
+h2 {
+    font-size: 1.4em;
+    color: #777}
 
-	.hello {
-      height: 230px;
-      background:url(../hello-b.png) no-repeat center 3px;
-
-	}
-
-	.lead {
-		border-bottom: 2px #7eabf5 solid
-	}
+.photothumb {
+    width: 100%}
+.desc {
+    padding: 0 15px 10px;
+    font-size: 13px;
+    line-height: 1.5em}
+.desc img {
+    width: 50%;
+    margin: 0 10px 10px 0;
+    float: left}
+.desc p {
+    margin-bottom: 0}

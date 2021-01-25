@@ -1,0 +1,117 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>leemay.dev</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link href="css/custom-ldev.css" rel="stylesheet">
+
+  </head>
+
+   <body>
+    <main role="main" class="container" style="max-width:900px;">
+      <h1 class="mt-5" style="color:#5993f3"> <a href="https://www.leemay.dev">leemay.dev</a></h1>
+
+      <br/>
+      <p style="font-weight: 600; font-size: 25px;">
+      	X1 Personalization: Started from the Bottom
+     </p>
+     August 1st, 2020
+  <p>
+<hr style="  border-top: 1px dotted #2692ff;">
+
+<span class="headers-post">tldr </span>
+<br/>
+This is post #1 of this series I'm calling "The Comcast Chronicles". I learned a great deal in the years that I worked on personalization for video at Comcast; this is my attempt to summarize what I learned before it seems like a distant memory. 
+
+
+<hr style="  border-top: 1px dotted #2692ff;">
+
+
+<span style="font-size:18px;">Let's go back in time a few years, </span> specifically the year 2017. Personalization for our video product at Comcast was...bleak; to say the least. I had just started managing the small (but great) engineering team and our first goal was to simply...be in the product. Increase the # of requests to our services, improve the customer experience, etc etc. 
+
+I remember doing a presentation to a bunch of execs and one of the first slides looked something like this...
+
+(insert slide with all of the legit product thats have personalization)
+
+
+
+<br><br>
+
+<span style="font-size:18px;">Back in 2017,</span> we worked on a deep learning model for video recommendations (suggesting TV shows and movies based on your prior watch history) that was initially evaluated on an old static dataset from 2013‬. This deep learning model was originally developed by a peer research team on a Hadoop cluster that resided on physical infrastructure.  
+<br/><br/>
+
+
+‪Our first goal was to reproduce the evaluation metrics (i.e. recall) by training and evaluating (offline) the model in our AWS account, with intentions of not only comparing how long it took the model to train in our cloud environment but also to ensure we got the same recall numbers as the research team did in their stack. One key reason for this was to ensure that we had parity with the research team before we introduced any changes. 
+
+<br/><br/>
+<span class="headers-post"> Training the model with fresh data </span>
+<br/>
+Once we accomplished training the model on the older dataset, the next goal would be to re-evaluate the model on a fresh dataset. This fresh dataset was more representative of usage for our subscribers in the current timeframe. The model training logic accepted files that were a strange combination of comma, pipe and tab delimited records. We wrote a Spark job thats input was the fresh dataset that consisted of Avro records and converted those Avro records to this strange format; instead of modifying the model training logic to read Avro‬. 
+
+<br/><br/>
+A few days later, we realized the format of the dataset for training had to be one large file...With this realization, we then decided to rewrite the model training logic so that the input for training wasn’t that strange pipe, comma, tab, insert-your-favorite-delimiter format‬. 
+<br/><br/>
+Days were spent determining why the evaluation numbers were lower for the model trained on the old dataset vs the fresh / current dataset. 
+<br/><br/>
+
+<span class="headers-post"> And so...we gave up </span>
+<br/>
+We soon pivoted away from this deep learning model and opted for focusing efforts on introducing a 'For You' personalized homepage using an older collaborative filtering algorithm that was already available in our production environment. 
+<br/><br/>
+
+During those months, maybe time would have been better spent working on the deficiencies in the data pipeline that resulted in opting for the old poorly formatted 2013 dataset initially (so that our research peers would have easy access to a relevant / current timeframe dataset). Or maybe time would have been better spent running an A/B test with the collaborative filtering algorithm and then introducing a more complex model like deep learning; using the collaborative filtering algorithm as the baseline. 
+
+<br/><br/>
+Back in 2017, it felt like months were wasted on trying to get this deep learning model trained on a fresh dataset that was more representative of production. <span style="font-weight: 900"> The engineers on this team were great but as I've mentioned, we were a small team, so focusing on the right work was important. </span> 
+
+<br/><br/>
+ 
+<span class="headers-post"> This isn't just a story about training a model on an old dataset</span>
+<br/>
+
+There's a little more to this story then simply attempting to retrain a model with fresh data with intentions of taking it from the proof-of-concept phase to production. <span style="font-weight: 900"> There's a bigger organizational story here. </span>
+<br/><br/>
+At the time, our researchers were detached from engineering. So one of the reasons for saying 'yes' to collaborating on this project, instead of focusing on just pushing what we had with our simple recommendations algorithm further, was to build that relationship up. I wanted our team to be the team that everyone wanted to work with. I also wanted to increase the traffic to our services, which would of course mean the impact of personalization was increasing from a user or product perspective. If we had more engineers, focusing on building up our data platfrom so research could have petabytes of data to experiment with, would have been great. But we didn't have that luxury; therefore, our focus shifted towards gaining momentum with personalization as a platform via the easy-to-support collaborative filtering algorithm. If research was embedded with the engineering team, who knows what the outcome could have been. 
+
+<br/><br/>
+The closer the researchers are to engineers, the sooner they'll be thinking of how to get to their model to production. The closer the engineers are to research, the sooner they'll be thinking about how to get their model to production. 
+<br/><br/>
+The words "their model" starts to become ambiguous, because both are trying to <span style="font-weight: 900"> work on a shared goal, starting at the earlier stages of a project. </span> This is one key ingredient that was missing at the time, it felt like we were trying to take a black box into production; and it doesn't need to feel like that. 
+
+<br/><br/>
+<span class="headers-post"> Start simple, execute, then improve </span>
+<br/>
+Reflecting on this now, it still feels like months were wasted. Because personalization's impact on the product was so far behind, what we worked on and the ROI of that work, was important. Sometimes starting simple, executing, then iterating and improving is the best approach. 
+<br/><br/>
+
+We were fumbling to adequately train the model on better data, imagine what it would have been like to even start pondering how to improve the serving response time (we were far from that stage...). In this case, starting simple meant pushing forward with the collabortive filtering algorithm, with more focus given towards improving our engineering platform so we could quickly iterate on product features for this For You A/B Test that I elluded to earlier. 
+
+<br/><br/>
+<span style="font-style:italic"> Note: I no longer work on video recommendations, so for all I know, this deep learning model could be serving millions of requests today. </span>
+
+      </p>
+ 
+   	  <br/>
+
+      
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <span>
+        	<a href="https://www.linkedin.com/in/leemaynassery/" target="_blank" class="foot-text">LinkedIn </span>
+			<a href="https://twitter.com/leemaynassery" target="_blank" class="foot-text"> Twitter</span>
+        </span>
+      </div>
+    </footer>
+  </body>
+
+</html>
+
+
+    
+
+
+
+
