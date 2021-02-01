@@ -10,7 +10,6 @@
 	  font-family: 'Ubuntu', Arial, sans-serif;
 	  background: white;
 	  color: black;
-	  margin-bottom: 60px;
 	  background-color: #fff;
       border: 15px solid black;
       margin: 0;
@@ -20,43 +19,51 @@
 #all {
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: 25% auto}
+    grid-template-columns: 25% auto
+}
 #sidebar {
     margin-left: 15px;
-    margin-right: 15px}
+    margin-right: 15px
+}
 #sidebar img {
-    border-radius: 4px;
-    width: 100%}
+    border-radius: 6px;
+    width: 100%
+}
 #sidebar .imgcontainer {
     border: 2px solid #dadada;
-    margin-top: 15px}
+    margin-top: 15px
+}
 #sidebar h1 {
     font-size: 2.2em;
     font-family: sans-serif;
-    text-transform: none}
+    text-transform: none
+}
 #sidebar h1 a,.small-navbar.visible-xs h1 a {
-    color: black}
+    color: black
+}
 .sidebar-menu {
     margin-left: 10px;
     padding-left: 0;
-	padding-top:10px;}
+	padding-top:10px;
+}
+
 .sidebar-menu li {
     list-style: none;
-    margin-bottom: 10px}
+    margin-bottom: 10px
+}
 
-.sidebar-menu.exlinks {
-    margin-top: 35px}
-.sidebar-menu.exlinks li:before {
-    color: black;
-    content: '\02a33 '}
+
+
 .sidebar-menu li a {
     color: #333;
     border-bottom: 1px dotted #999;
     padding-bottom: 2px;
-    text-decoration: none}
+    text-decoration: none
+}
 .sidebar-menu li a:hover,.sidebar-menu li a:focus {
     color: black;
-    border-bottom: 1px solid #ff2826}
+    border-bottom: 1px solid #ff2826
+}
 .sidebar p {
     color: #555!important;
     font-size: 1.4em}
@@ -72,27 +79,39 @@ p,.sidebar-p {
     display: block;
     width: 100%}
 #sidebar {
-    display: block}
+    display: block
+}
 .itemgrid {
-    margin-left: 15px}
+    margin-left: 15px
+}
 #sidebar.sidebar-offcanvas p {
-    font-size: .8em!important}
+    font-size: .8em!important
+}
 #sidebar.sidebar-offcanvas {
     left: 0;
     width: 100%;
     position: relative;
-    font-size: 2em!important}
+    font-size: 2em!important
+}
 .item p,.item h3 {
     font-size: 1.4em!important;
-    line-height: 1.5em}
+    line-height: 1.5em
+}
 #sidebar h1 {
-    font-size: 1.7em}
+    font-size: 1.7em
+}
 #sidebar img {
-    margin-top: -35%}
+    margin-top: -1%
+}
+
+
 #sidebar .imgcontainer {
-    height: 50px;
+    height: 400px;
     overflow: hidden;
-    margin-top: 15px}
+    margin-top: 15px
+}
+
+
 .sidebar-p {
     display: none}
 .singlecontainer {
@@ -108,13 +127,4 @@ h2 {
 
 .photothumb {
     width: 100%}
-.desc {
-    padding: 0 15px 10px;
-    font-size: 13px;
-    line-height: 1.5em}
-.desc img {
-    width: 50%;
-    margin: 0 10px 10px 0;
-    float: left}
-.desc p {
-    margin-bottom: 0}
+
